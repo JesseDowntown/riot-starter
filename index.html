@@ -5,9 +5,24 @@
 <body>
 
 <!-- HTML -->
+<div id="store">
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name">
 
+    <label for="price">Price:</label>
+    <input type="text" id="price">
+
+    <button type="button" id="button">Submit!</button>
+  </form>
+</div>
 <div id="templates">
   <!-- TEMPLATES -->
+  <script class="item" type="text/template">
+    <div class="item">
+      <p>{ name } - ${ price }</p>
+    </div>
+  </script>
 </div>
 
 <script src="vendor/js/jquery-1.10.2.min.js"></script>
