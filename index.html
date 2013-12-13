@@ -15,15 +15,25 @@
 
   <label>Youtube ID:</label>
   <input type="text" id="createYoutubeId">
+ 
+  <label>Video Genre:</label>
+  <input type="text" id="createGenre">
 
   <input type="submit" id="submit">
 </form>
 
+<button id="stat-button">Show the Stats!</button>
+<div id="genre-stats"></div>
+
 <div id="templates">
   
+  <script class="genre-stats" type="text/template">
+    <p class="genre-stats">The genre { genre } has appeared { number } times on this list.</p>
+  </script>
+
   <script class="video-list-item" type="text/template">
     <div class="video-list-item">
-      <h3>{ title }</h3>
+      <h3>{ title } ({ genre })</h3>
       <a href="https://www.youtube.com/watch?v={ youtubeId }" target="_blank">view video</a>
     </div>
   </script>
