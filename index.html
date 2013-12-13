@@ -8,24 +8,8 @@
 <div id="video-display"></div>
 <div id="video-list"></div>
 
-<form id="new-video">
-  <!-- TODO: 2 inputs, 1 button -->
-</form>
-
-
-<div id="templates">
-  
-  <script class="video-list-item" type="text/template">
-    <div class="video-list-item">
-      <h3>{ title }</h3>
-      <a href="https://www.youtube.com/watch?v={ youtubeId }" >view video</a>
-    </div>
-  </script>
-
-</div>
-
 <h2>Add Your Favorite Video!</h2>
-<form>
+<form id="new-video">
   <label>Title:</label>
   <input type="text" id="createTitle">
 
@@ -34,6 +18,17 @@
 
   <input type="submit" id="submit">
 </form>
+
+<div id="templates">
+  
+  <script class="video-list-item" type="text/template">
+    <div class="video-list-item">
+      <h3>{ title }</h3>
+      <a href="https://www.youtube.com/watch?v={ youtubeId }" target="_blank">view video</a>
+    </div>
+  </script>
+
+</div>
 
 <script src="vendor/js/jquery-1.10.2.min.js"></script>
 <script src="vendor/js/riot.js"></script>
