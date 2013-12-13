@@ -4,6 +4,18 @@ var videos = [
   { title: 'Sadness', youtubeId: 'sIeJSSjTG3k' }
 ];
 
+var itemTemplate = $('#templates .video-list-item').html()
+
 var renderVideoList = function () {
-  // TODO
+  for (var i = 0; i < videos.length; i++) {
+    var newItemHtml = $.render(itemTemplate, videos[i]);
+    $('#video-list').append(newItemHtml)
+  }
 };
+
+renderVideoList();
+
+$('#submit').on('click', function(e) {
+  $('#title')
+  e.preventDefault();
+});

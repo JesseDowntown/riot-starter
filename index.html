@@ -4,7 +4,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
-
+<h2>Popular Videos:</h2>
 <div id="video-display"></div>
 <div id="video-list"></div>
 
@@ -14,8 +14,26 @@
 
 
 <div id="templates">
-  <!-- TODO: video-list-item template -->
+  
+  <script class="video-list-item" type="text/template">
+    <div class="video-list-item">
+      <h3>{ title }</h3>
+      <a href="https://www.youtube.com/watch?v={ youtubeId }" >view video</a>
+    </div>
+  </script>
+
 </div>
+
+<h2>Add Your Favorite Video!</h2>
+<form>
+  <label>Title:</label>
+  <input type="text" id="createTitle">
+
+  <label>Youtube ID:</label>
+  <input type="text" id="createYoutubeId">
+
+  <input type="submit" id="submit">
+</form>
 
 <script src="vendor/js/jquery-1.10.2.min.js"></script>
 <script src="vendor/js/riot.js"></script>
