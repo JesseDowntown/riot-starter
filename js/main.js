@@ -50,11 +50,14 @@ var renderGenreStats = function() {
     var newStatsHtml = $.render(statsTemplate, stat);
     $("#genre-stats").append(newStatsHtml)
   }
-}
-
+};
 $('#stat-button').on('click', function () {
   $("#genre-stats").empty();
   renderGenreStats();
-})
-
-
+});
+// Detect Video Link Click
+$('a').on('click', function (e) {
+  var youtubeId = $(e.currentTarget).data('youtube-id');
+  console.log('Clicked on youtube video:', youtubeId);
+  return youtubeId
+});
