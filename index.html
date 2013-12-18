@@ -22,13 +22,14 @@
   <input type="submit" id="submit">
 </form>
 
+<div id="video-view"></div>
 <button id="stat-button">Show the Stats!</button>
 <div id="genre-stats"></div>
 
-<div id="templates">
 
+<div id="templates">
   <script class="video-embed" type="text/template">
-    <iframe class="video-embed" width="420" height="315" src="//www.youtube.com/embed/{ youtubeId }" frameborder="0" allowfullscreen></iframe>
+    <iframe class="video-embed" width="420" height="315" src="https://www.youtube.com/embed/{ youtubeId }" frameborder="0" allowfullscreen></iframe>
   </script>
   
   <script class="genre-stats" type="text/template">
@@ -41,7 +42,6 @@
       <a href="https://www.youtube.com/watch?v={ youtubeId }" target="_blank" data-youtube-id="{ youtubeId }">view video</a>
     </div>
   </script>
-
 </div>
 
 <script src="vendor/js/jquery-1.10.2.min.js"></script>

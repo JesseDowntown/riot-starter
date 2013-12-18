@@ -20,12 +20,13 @@ $('#submit').on('click', function(e) {
   var title = $('#createTitle').val();
   var youtubeId = $('#createYoutubeId').val();
   var genre = $('#createGenre').val();
-  videos.push({});
-  videos[(videos.length)-1].title = title;
-  videos[(videos.length)-1].youtubeId = youtubeId;
-  videos[(videos.length)-1].genre = genre;
-  var newItemHtml = $.render(itemTemplate, videos[videos.length-1]);
-  $('#video-list').append(newItemHtml);
+  videos.push({
+    title: title,
+    youtubeId: youtubeId,
+    genre: genre
+  });
+  $('#video-list').empty();
+  renderVideoList();
   e.preventDefault();
 });
 // Calculate genre stats
@@ -45,7 +46,7 @@ var renderGenreStats = function() {
   for (var genre in stats) {
     var stat = {};
     stat.number = stats[genre];
-    stat.genre = genre
+    stat.genre = genre;
     console.log(stat);
     var newStatsHtml = $.render(statsTemplate, stat);
     $("#genre-stats").append(newStatsHtml)
@@ -55,9 +56,18 @@ $('#stat-button').on('click', function () {
   $("#genre-stats").empty();
   renderGenreStats();
 });
-// Detect Video Link Click
+
+// Prepare Html to Display Video
+var videoViewTemplate = $('#templates .video-embed').html();
+// Display video on click
 $('a').on('click', function (e) {
-  var youtubeId = $(e.currentTarget).data('youtube-id');
-  console.log('Clicked on youtube video:', youtubeId);
-  return youtubeId
+  e.preventDefault();
+  var otherID = $(e.currentTarget).data('youtube-id');
+  var clickedVideo = {youtubeId: otherID}
+  var videoViewHtml = $.render(videoViewTemplate, clickedVideo);
+  var displayView = function() {
+    $('#video-view').append(videoViewHtml);
+  }
+  $('#video-view').empty();
+  displayView();
 });
